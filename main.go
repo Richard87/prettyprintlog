@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"time"
 
@@ -14,6 +15,9 @@ func main() {
 	for scanner.Scan() {
 		content := scanner.Text()
 
-		_, _ = writer.Write([]byte(content))
+		_, err := writer.Write([]byte(content))
+		if err != nil {
+			fmt.Printf(content)
+		}
 	}
 }
