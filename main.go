@@ -17,7 +17,7 @@ func main() {
 
 		_, err := writer.Write([]byte(content))
 		if err != nil {
-			fmt.Printf(content)
+			fmt.Println(content)
 		}
 	}
 }
