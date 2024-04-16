@@ -1,4 +1,4 @@
-module github.com/richard87/prettyprintlog
+module github.com/richard87/prettyprintlog/test
 
 go 1.22
 
