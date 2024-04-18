@@ -21,7 +21,7 @@ func main() {
 
 	flag.Parse()
 
-	writer := zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: time.TimeOnly}
+	writer := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.TimeOnly}
 	for scanner.Scan() {
 		content := scanner.Text()
 
