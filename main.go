@@ -16,12 +16,14 @@ func init() {
 	flag.StringVarP(&zerolog.LevelFieldName, "level", "l", "level", "Level field name")
 }
 
+func TimeOnlyOption(w *zerolog.ConsoleWriter) { w.TimeFormat = time.TimeOnly }
+
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	flag.Parse()
 
-	writer := zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: time.TimeOnly}
+	writer := zerolog.NewConsoleWriter(TimeOnlyOption)
 	for scanner.Scan() {
 		content := scanner.Text()
 
